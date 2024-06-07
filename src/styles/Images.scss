@@ -1,0 +1,110 @@
+@use '../_style.scss' as style;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.product-img{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+    >img{
+        height: 55vh;
+        
+        border-radius: 10px;
+    }
+
+    .product-preview{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 55vh;
+        img,.selected{
+            height: 80px;
+            aspect-ratio: 1/1;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .selected{
+            border: 2px solid style.$orange;
+            border-radius: 10px;
+            
+            
+            img{
+                filter: opacity(0.4);
+            }
+        }
+    }
+
+    .zoom-preview{  
+        background-color: rgba(0, 0, 0, 0.66);
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        img{
+            height: 500px;
+            opacity: 1;
+            border-radius: 15px;
+        }
+
+        .close{
+            height: 20px;
+            margin-left: 480px;
+            margin-bottom: 15px;
+            filter:brightness(0) saturate(100%) invert(97%) sepia(46%) saturate(363%) hue-rotate(171deg) brightness(116%) contrast(100%);
+        }
+
+        .close:hover{
+            filter: invert(75%) sepia(58%) saturate(5633%) hue-rotate(347deg) brightness(100%) contrast(102%);
+
+        }
+
+        .main-panel{
+            display: flex;
+            align-items: center;
+            
+        }
+
+        .arrow{
+            background-color: white;
+            height: 40px;
+            width: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            z-index: 2;
+
+            img{
+                height: 12px;
+            }
+
+
+        }
+
+        .arrow:hover{
+            img{
+                filter: invert(75%) sepia(58%) saturate(5633%) hue-rotate(347deg) brightness(100%) contrast(102%);
+
+            }
+        }
+
+        .arrow:first-child{
+            margin-right: -20px;
+        }
+        .arrow:last-child{
+            margin-left: -20px;
+        }
+    }
+}

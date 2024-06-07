@@ -1,0 +1,98 @@
+@use '../_style.scss' as style;
+
+.info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+
+    .comp_name{
+        letter-spacing: 1px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: style.$gray1;
+    }
+
+    .name{
+        font-size: 2.3rem;
+        width: 75%;
+    }
+
+    .description{
+        color: style.$gray1;
+        letter-spacing: 1px;
+        font-size: .9rem;
+        line-height: 25px;
+        font-weight: 500;
+        margin: 20px 0 8px 0;
+    }
+
+    .price{
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        letter-spacing: 1.2px;
+        div{
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            border-radius: 5px;
+        }
+    }
+
+    
+
+    .oldPrice{
+        text-decoration: line-through;
+        color: style.$gray1;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .btn-group{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        font-size: 0.9rem;
+        font-weight: 700;
+
+        .qty-btn{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: style.$gray3;
+            gap: 45px;
+            padding: 15px 30px;
+            border-radius: 7px;
+
+            img{
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+
+        .addCartBtn{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: style.$orange;
+            padding: 15px 80px;
+            border-radius: 7px;
+            cursor: pointer;
+
+            img{
+                height: 0.9rem;
+                filter: brightness(0);
+            }
+        }
+
+        .addCartBtn:hover{
+            background-color: hsl(26, 97%, 71%);
+        }
+    }
+}
